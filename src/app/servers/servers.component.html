@@ -3,16 +3,19 @@
     <div class="list-group">
       <a
         [routerLink]="['/servers', server.id]"
-        [queryParams]="{allowEdit: server.id === 3 ? '1' : '0'}"
+        [queryParams]="{ allowEdit: server.id === 3 ? '1' : '0' }"
         fragment="loading"
-        href="#"
         class="list-group-item"
-        *ngFor="let server of servers">
+        *ngFor="let server of servers"
+      >
         {{ server.name }}
       </a>
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
+    <!-- TODO: HOME WORK: find out more about multiple router-outlets, how do they work? can we have 1 router for explorer grid and second router for stacks?? -->
+    <!-- <router-outlet name="serverView"></router-outlet>
+    <router-outlet name="serverEdit"></router-outlet> -->
     <router-outlet></router-outlet>
     <!--<button class="btn btn-primary" (click)="onReload()">Reload Page</button>-->
     <!--<app-edit-server></app-edit-server>-->
@@ -20,4 +23,3 @@
     <!--&lt;!&ndash;<app-server></app-server>&ndash;&gt;-->
   </div>
 </div>
-
